@@ -31,12 +31,12 @@ RUN pip3.4 install redis && pip3.4 install requests && pip3.4 install flask
 #复制配置文件
 RUN mv /etc/nginx/sites-available/default ./
 COPY default /etc/nginx/sites-available/
-#COPY config.py ./crysadm/
-#COPY run.sh ./
+COPY config.py ./crysadm/
+COPY run.sh ./
 RUN apt-get clean
 
 #脚本加运行权限
-RUN chmod +x ./root/run.sh
+RUN chmod +x ./run.sh
 
 #设置容器端口
 #云监工端口
@@ -48,7 +48,7 @@ EXPOSE 80
 
 RUN chmod +w /set_root_pw.sh
 #添加运行脚本
-RUN echo "/app/root/run.sh" >>/set_root_pw.sh
+RUN echo "/app/run.sh" >>/set_root_pw.sh
 RUN echo "service nginx start" >>/set_root_pw.sh
 RUN echo "service nginx reload" >>/set_root_pw.sh
 RUN echo "/bin/bash" >>/set_root_pw.sh
