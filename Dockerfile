@@ -1,5 +1,5 @@
 # 这是迅雷云监工的docker程序
-# 云监工原作者powergx
+# #云监工原作者powergx
 
 FROM tutum/ubuntu:trusty
 MAINTAINER hauntek <hauntek@hotmail.com>
