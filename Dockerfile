@@ -33,6 +33,7 @@ RUN mv /etc/nginx/sites-available/default ./
 COPY default /etc/nginx/sites-available/
 COPY config.py ./root/
 COPY run.sh ./
+COPY redis.conf /etc/redis/
 RUN apt-get clean
 
 #脚本加运行权限
