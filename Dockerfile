@@ -20,7 +20,7 @@ WORKDIR /app
 RUN git clone https://github.com/xyz9836/root.git
 
 #Redis数据库保存目录
-VOLUME ["/var/lib/redis/root"]
+VOLUME ["/var/lib/redis"]
 
 #安装python，redis
 RUN apt-get install -y python3.4 python3.4-dev redis-server
